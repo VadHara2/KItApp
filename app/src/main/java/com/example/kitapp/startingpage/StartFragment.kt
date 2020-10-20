@@ -16,6 +16,7 @@ class StartFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding: StartFramentBinding = DataBindingUtil.inflate(inflater, R.layout.start_frament, container, false)
 
+      //  binding.mainViewModel = mainViewModel
 
         return binding.root
     }
