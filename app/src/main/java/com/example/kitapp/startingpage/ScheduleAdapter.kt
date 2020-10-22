@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ScheduleAdapter: RecyclerView.Adapter<TextItemViewHolder>(){
-    var data= listOf<String>()
+    var data= listOf<ScheduleItem>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -27,7 +27,7 @@ class ScheduleAdapter: RecyclerView.Adapter<TextItemViewHolder>(){
 
     override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
         val item = data[position]
-        holder.textView.text = item
+        holder.textView.text = item.thirdLesson
     }
 
     override fun getItemCount(): Int {

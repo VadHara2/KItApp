@@ -20,8 +20,6 @@ import kotlinx.coroutines.withContext
 
 class StartFragment: Fragment() {
 
-    private lateinit var viewModel: StartViewModel
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding: StartFramentBinding = DataBindingUtil.inflate(inflater, R.layout.start_frament, container, false)
@@ -31,11 +29,18 @@ class StartFragment: Fragment() {
         val startViewModel = ViewModelProvider(this, viewModelFactory).get(StartViewModel::class.java)
 
         binding.startViewModel = startViewModel
-        binding.lifecycleOwner = this
 
+        binding.button.setOnClickListener {
+            startViewModel.createDayOfSchedule()
+        }
+        binding.lifecycleOwner = this
         val adapter = ScheduleAdapter()
         binding.scheduleList.adapter = adapter
-        adapter.data = listOf("Понеділок", "Вівторок")
+        startViewModel.days.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.data = listOf(it)
+            }
+        })
 
 
 

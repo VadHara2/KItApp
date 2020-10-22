@@ -6,21 +6,24 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "schedule_item_table")
 data class ScheduleItem(
-    @PrimaryKey(autoGenerate = false)
-    var nameDayId: String = "Понеділок/ч",
+    @PrimaryKey(autoGenerate = true)
+    var dayId: Long = 0L,
+
+    @ColumnInfo(name = "name_day")
+    var nameDay: String = "",
 
     @ColumnInfo(name = "first_lesson")
-    val firstLesson: String = "",
+    var firstLesson: String = "",
 
     @ColumnInfo(name = "second_lesson")
-    val secondLesson: String= "",
+    var secondLesson: String= "",
 
     @ColumnInfo(name = "third_lesson")
-    val thirdLesson: String = "ТІМС",
+    var thirdLesson: String = "ТІМС",
 
     @ColumnInfo(name = "fourth_lesson")
-    val fourthLesson: String = "ТІМС",
+    var fourthLesson: String = "ТІМС",
 
     @ColumnInfo(name = "fifth_lesson")
-    val fifthLesson: String = "ТІМС",
+    var fifthLesson: String = "ТІМС",
 )
