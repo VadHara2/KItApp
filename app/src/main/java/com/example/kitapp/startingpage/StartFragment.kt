@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.kitapp.R
 import com.example.kitapp.database.ScheduleDatabase
 import com.example.kitapp.database.ScheduleDatabaseDao
+import com.example.kitapp.database.ScheduleItem
 import com.example.kitapp.databinding.StartFramentBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -38,7 +39,7 @@ class StartFragment: Fragment() {
         binding.scheduleList.adapter = adapter
         startViewModel.days.observe(viewLifecycleOwner, Observer {
             it?.let {
-                adapter.data = listOf(it)
+                adapter.data= it
             }
         })
 

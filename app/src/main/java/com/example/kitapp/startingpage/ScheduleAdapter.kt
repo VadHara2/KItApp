@@ -1,5 +1,6 @@
 package com.example.kitapp.startingpage
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.ViewGroup
@@ -27,7 +28,8 @@ class ScheduleAdapter: RecyclerView.Adapter<TextItemViewHolder>(){
 
     override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
         val item = data[position]
-        holder.textView.text = item.thirdLesson
+        Log.i("lol","${item.nameDay}")
+        holder.textView.text = item.nameDay
     }
 
     override fun getItemCount(): Int {

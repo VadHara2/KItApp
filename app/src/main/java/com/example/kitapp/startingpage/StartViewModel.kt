@@ -13,26 +13,22 @@ class StartViewModel (val database: ScheduleDatabaseDao, application: Applicatio
 
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-    val days = MutableLiveData<ScheduleItem?>()
+    var days = database.getAllDays()
+
+
+   // val dayList = listOf<ScheduleItem>(database.getAllDays())
 
 
     init {
-        //createDayOfSchedule()
-        initializeDays()
-    }
 
-    private fun initializeDays() {
-        viewModelScope.launch {
-            days.value = getDayFromDatabase()
-        }
     }
+//
+//    private fun initializeDay() {
+//        viewModelScope.launch {
+//            days = database.getAllDays()
+//        }
+//    }
 
-    private suspend fun getDayFromDatabase(): ScheduleItem? {
-        //return withContext(Dispatchers.IO) {
-        var day = database.getDay()
-        return day
-        //}
-    }
 
     private suspend fun clear() {
         withContext(Dispatchers.IO) {
@@ -40,39 +36,43 @@ class StartViewModel (val database: ScheduleDatabaseDao, application: Applicatio
         }
     }
 
-    private suspend fun update(night: ScheduleItem) {
+    private suspend fun update(day: ScheduleItem) {
         withContext(Dispatchers.IO) {
-            database.update(night)
+            database.update(day)
         }
     }
 
-    private suspend fun insert(night: ScheduleItem) {
+    private suspend fun insert(day: ScheduleItem) {
         withContext(Dispatchers.IO) {
-            database.insert(night)
+            database.insert(day)
         }
     }
 
     fun createDayOfSchedule(){
 
+        Log.i("lol","1")
 
         viewModelScope.launch {
-            val newDay = ScheduleItem()
+            var newDay = ScheduleItem()
 
             insert(newDay)
-
+            newDay = database.getDay()!!
             //tonight.value = getTonightFromDatabase()
 
-            val day = days.value ?: return@launch
-            Log.i("lol","1")
+            val day = newDay ?: return@launch
+            day.nameDay = "Вівторок"
             day.fifthLesson ="F"
             day.secondLesson = "dnslcndks"
             day.thirdLesson = ",ds,cdl;"
             day.fourthLesson = "skdlmcd"
             day.firstLesson= "F"
             update(day)
-
-
+            subDay(day)
         }
+    }
+
+    private fun subDay(day2:ScheduleItem){
+        days.value?.plus(day2)
     }
 
 }

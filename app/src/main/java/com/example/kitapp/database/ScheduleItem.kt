@@ -10,20 +10,20 @@ data class ScheduleItem(
     var dayId: Long = 0L,
 
     @ColumnInfo(name = "name_day")
-    var nameDay: String = "",
+    var nameDay: String = " ",
 
     @ColumnInfo(name = "first_lesson")
-    var firstLesson: String = "",
+    var firstLesson: String = " ",
 
     @ColumnInfo(name = "second_lesson")
-    var secondLesson: String= "",
+    var secondLesson: String= " ",
 
     @ColumnInfo(name = "third_lesson")
-    var thirdLesson: String = "ТІМС",
+    var thirdLesson: String = " ",
 
     @ColumnInfo(name = "fourth_lesson")
-    var fourthLesson: String = "ТІМС",
+    var fourthLesson: String = " ",
 
     @ColumnInfo(name = "fifth_lesson")
-    var fifthLesson: String = "ТІМС",
+    var fifthLesson: String = " ",
 )
