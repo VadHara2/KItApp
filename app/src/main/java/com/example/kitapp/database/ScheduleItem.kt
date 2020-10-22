@@ -10,10 +10,10 @@ data class ScheduleItem(
     var nameDayId: String = "Понеділок/ч",
 
     @ColumnInfo(name = "first_lesson")
-    val firstLesson: String,
+    val firstLesson: String = "",
 
     @ColumnInfo(name = "second_lesson")
-    val secondLesson: String,
+    val secondLesson: String= "",
 
     @ColumnInfo(name = "third_lesson")
     val thirdLesson: String = "ТІМС",

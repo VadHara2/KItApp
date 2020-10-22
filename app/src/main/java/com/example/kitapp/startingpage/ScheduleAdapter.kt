@@ -7,9 +7,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kitapp.R
 import com.example.kitapp.database.ScheduleItem
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class SleepNightAdapter: RecyclerView.Adapter<TextItemViewHolder>(){
-    var data= listOf<ScheduleItem>()
+class ScheduleAdapter: RecyclerView.Adapter<TextItemViewHolder>(){
+    var data= listOf<String>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -23,7 +27,7 @@ class SleepNightAdapter: RecyclerView.Adapter<TextItemViewHolder>(){
 
     override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
         val item = data[position]
-        holder.textView.text = item.nameDayId
+        holder.textView.text = item
     }
 
     override fun getItemCount(): Int {

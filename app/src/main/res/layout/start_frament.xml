@@ -6,12 +6,12 @@
     <data>
 
         <variable
-            name="mainViewModel"
-            type="com.example.kitapp.startingpage.MainViewModel" />
+            name="startViewModel"
+            type="com.example.kitapp.startingpage.StartViewModel" />
     </data>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/schedule"
+        android:id="@+id/scheduleList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
