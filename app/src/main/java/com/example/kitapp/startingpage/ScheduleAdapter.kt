@@ -3,6 +3,7 @@ package com.example.kitapp.startingpage
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.TextureView
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -13,27 +14,46 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ScheduleAdapter: RecyclerView.Adapter<TextItemViewHolder>(){
+class ScheduleAdapter: RecyclerView.Adapter<ScheduleAdapter.ViewHolder>(){
+
     var data= listOf<ScheduleItem>()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.text_item_view, parent, false) as TextView
-        return TextItemViewHolder(view)
+        val view = layoutInflater.inflate(R.layout.text_item_view, parent, false)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
         Log.i("lol","${item.nameDay}")
-        holder.textView.text = item.nameDay
+        holder.nameOfDay.text = item.nameDay
+        holder.firstLesson.text = item.firstLesson
+        holder.secondLesson.text = item.secondLesson
+        holder.thirdLesson.text = item.thirdLesson
+        holder.fourthLesson.text = item.fourthLesson
+        holder.fifthLesson.text = item.fifthLesson
+        holder.sixthLesson.text = item.sixthLesson
+        holder.seventhLesson.text = item.seventhLesson
     }
 
     override fun getItemCount(): Int {
         return data.size
+    }
+
+    class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+        val nameOfDay: TextView = itemView.findViewById(R.id.name_of_day)
+        val firstLesson: TextView = itemView.findViewById(R.id.first_lesson)
+        val secondLesson: TextView = itemView.findViewById(R.id.second_lesson)
+        val thirdLesson: TextView = itemView.findViewById(R.id.third_lesson)
+        val fourthLesson: TextView = itemView.findViewById(R.id.fourth_lesson)
+        val fifthLesson: TextView = itemView.findViewById(R.id.fifth_lesson)
+        val sixthLesson: TextView = itemView.findViewById(R.id.sixth_lesson)
+        val seventhLesson: TextView = itemView.findViewById(R.id.seventh_lesson)
     }
 
 }

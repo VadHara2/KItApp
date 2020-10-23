@@ -26,4 +26,10 @@ data class ScheduleItem(
 
     @ColumnInfo(name = "fifth_lesson")
     var fifthLesson: String = " ",
+
+    @ColumnInfo(name = "sixth_lesson")
+    var sixthLesson: String = " ",
+
+    @ColumnInfo(name = "seventh_lesson")
+    var seventhLesson: String = " ",
 )
