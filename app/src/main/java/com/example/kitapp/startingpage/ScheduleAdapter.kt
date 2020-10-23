@@ -22,6 +22,18 @@ class ScheduleAdapter: RecyclerView.Adapter<ScheduleAdapter.ViewHolder>(){
             notifyDataSetChanged()
         }
 
+    var up = listOf<ScheduleItem>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
+
+    var down = listOf<ScheduleItem>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.text_item_view, parent, false)
@@ -30,7 +42,7 @@ class ScheduleAdapter: RecyclerView.Adapter<ScheduleAdapter.ViewHolder>(){
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
-        Log.i("lol","${item.nameDay}")
+
         holder.nameOfDay.text = item.nameDay
         holder.firstLesson.text = item.firstLesson
         holder.secondLesson.text = item.secondLesson
@@ -43,6 +55,16 @@ class ScheduleAdapter: RecyclerView.Adapter<ScheduleAdapter.ViewHolder>(){
 
     override fun getItemCount(): Int {
         return data.size
+    }
+
+    fun filter(){
+        for (day in data){
+            if (day.whichDay){
+                up.plus(day)
+            } else{
+                down.plus(day)
+            }
+        }
     }
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){

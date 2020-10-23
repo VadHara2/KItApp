@@ -9,6 +9,9 @@ data class ScheduleItem(
     @PrimaryKey(autoGenerate = true)
     var dayId: Long = 0L,
 
+    @ColumnInfo(name = "which_day")
+    var whichDay: Boolean = true,
+
     @ColumnInfo(name = "name_day")
     var nameDay: String = " ",
 
