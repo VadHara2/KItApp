@@ -15,20 +15,9 @@ class StartViewModel (val database: ScheduleDatabaseDao, application: Applicatio
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     var days = database.getAllDays()
 
-
-   // val dayList = listOf<ScheduleItem>(database.getAllDays())
-
-
     init {
-
+        onClear()
     }
-//
-//    private fun initializeDay() {
-//        viewModelScope.launch {
-//            days = database.getAllDays()
-//        }
-//    }
-
 
     private suspend fun clear() {
         withContext(Dispatchers.IO) {
@@ -73,6 +62,19 @@ class StartViewModel (val database: ScheduleDatabaseDao, application: Applicatio
 
     private fun subDay(day2:ScheduleItem){
         days.value?.plus(day2)
+    }
+
+    fun onClear() {
+        viewModelScope.launch {
+            // Clear the database table.
+            clear()
+        }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+
     }
 
 }
