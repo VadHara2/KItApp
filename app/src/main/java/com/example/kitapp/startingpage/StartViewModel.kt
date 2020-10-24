@@ -68,7 +68,7 @@ class StartViewModel (val database: ScheduleDatabaseDao, application: Applicatio
                 day.thirdLesson = "-"
                 day.fourthLesson = "-"
                 day.fifthLesson = "Мат. Аналіз 2308 лек."
-                day.sixthLesson = "ОБД 2112 лек."
+                day.sixthLesson = "Алгоритми 2112 лек."
                 day.seventhLesson = "-"
                 subDay(day)
                 update(day)
@@ -132,7 +132,7 @@ class StartViewModel (val database: ScheduleDatabaseDao, application: Applicatio
                 day.thirdLesson = "-"
                 day.fourthLesson = "-"
                 day.fifthLesson = "Мат. Аналіз 2308 лек."
-                day.sixthLesson = "ОБД 2112 лек."
+                day.sixthLesson = "Алгоритми 2112 лек."
                 day.seventhLesson = "-"
                 subDay(day)
                 update(day)
