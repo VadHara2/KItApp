@@ -15,12 +15,6 @@ class StartViewModel (val database: ScheduleDatabaseDao, application: Applicatio
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     var days = database.getAllDays()
 
-    val filter = MutableLiveData<Boolean>()
-
-    init {
-
-        filter.value=true
-    }
 
     private suspend fun clear() {
         withContext(Dispatchers.IO) {

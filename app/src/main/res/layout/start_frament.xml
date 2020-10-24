@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-
         <variable
             name="startViewModel"
             type="com.example.kitapp.startingpage.StartViewModel" />
@@ -14,43 +13,14 @@
         android:layout_height="match_parent"
         android:background="@color/secondaryLightColor">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/primaryLightColor"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tabIndicatorColor="@color/secondaryDarkColor"
-            app:tabTextColor="@color/primaryTextColor"
-            >
-
-            <com.google.android.material.tabs.TabItem
-
-                android:id="@+id/up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Чисельник"
-                />
-
-            <com.google.android.material.tabs.TabItem
-
-                android:id="@+id/down"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Знаменник" />
-
-        </com.google.android.material.tabs.TabLayout>
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/scheduleList"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

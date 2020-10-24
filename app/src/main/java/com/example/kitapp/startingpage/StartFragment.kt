@@ -1,5 +1,6 @@
 package com.example.kitapp.startingpage
 
+import android.app.Application
 import android.content.Intent.getIntent
 import android.os.Bundle
 import android.util.Log
@@ -17,36 +18,37 @@ import com.example.kitapp.database.ScheduleDatabaseDao
 import com.example.kitapp.database.ScheduleItem
 import com.example.kitapp.databinding.StartFramentBinding
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.start_frament.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.android.synthetic.main.activity_main.*
 
 
-class StartFragment: Fragment() {
+class StartFragment(var chth:Boolean): Fragment() {
+    lateinit var binding: StartFramentBinding
+    lateinit var application: Application
+    lateinit var dataSource: ScheduleDatabaseDao
+    lateinit var viewModelFactory: StartViewModelFactory
+    lateinit var startViewModel: StartViewModel
+    lateinit var adapter: ScheduleAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        this.activity?.setTitle("Розклад")
-        val binding: StartFramentBinding = DataBindingUtil.inflate(inflater, R.layout.start_frament, container, false)
-        val application = requireNotNull(this.activity).application
-        val dataSource = ScheduleDatabase.getInstance(application).scheduleDatabaseDao
-        val viewModelFactory = StartViewModelFactory(dataSource, application)
-        val startViewModel = ViewModelProvider(this, viewModelFactory).get(StartViewModel::class.java)
-        binding.startViewModel = startViewModel
-
-        startViewModel.createDayOfSchedule()
-
-
+        binding = DataBindingUtil.inflate(inflater, R.layout.start_frament, container, false)
+        application = requireNotNull(this.activity).application
+        dataSource = ScheduleDatabase.getInstance(application).scheduleDatabaseDao
+        viewModelFactory = StartViewModelFactory(dataSource, application)
+        startViewModel = ViewModelProvider(this, viewModelFactory).get(StartViewModel::class.java)
         binding.lifecycleOwner = this
-        val adapter = ScheduleAdapter()
+        adapter = ScheduleAdapter()
         binding.scheduleList.adapter = adapter
+
+        if (chth){
+            startViewModel.createDayOfSchedule()
+        }
+
+
 
 
         fun updateData(newData:List<ScheduleItem>){
-            if (adapter.data != newData.filter { it.whichDay == startViewModel.filter.value }) {
-                adapter.data = newData.filter { it.whichDay == startViewModel.filter.value }
+            if (adapter.data != newData.filter { it.whichDay == chth }) {
+                adapter.data = newData.filter { it.whichDay == chth }
             }
         }
 
@@ -58,25 +60,20 @@ class StartFragment: Fragment() {
 
 
 
-        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                startViewModel.days.value?.let { updateData(it) }
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-                startViewModel.filter.value = !startViewModel.filter.value!!
-            }
-        })
-
-
-
-
-
+//        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+//
+//            override fun onTabSelected(tab: TabLayout.Tab?) {
+//                startViewModel.days.value?.let { updateData(it) }
+//            }
+//
+//            override fun onTabReselected(tab: TabLayout.Tab?) {
+//
+//            }
+//
+//            override fun onTabUnselected(tab: TabLayout.Tab?) {
+//                startViewModel.filter.value = !startViewModel.filter.value!!
+//            }
+//        })
 
         return binding.root
     }
