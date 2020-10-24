@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/allerta_stencil</item>
+        <item>@font/el_messiri</item>
+        <item>@font/el_messiri_bold</item>
+        <item>@font/el_messiri_medium</item>
+        <item>@font/exo_2_medium</item>
+        <item>@font/oswald_light</item>
+        <item>@font/prata</item>
+        <item>@font/press_start_2p</item>
+        <item>@font/ubuntu_light</item>
+        <item>@font/ubuntu_medium</item>
+        <item>@font/yanone_kaffeesatz</item>
+    </array>
+</resources>

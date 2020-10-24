@@ -28,6 +28,7 @@ import kotlinx.coroutines.withContext
 class StartFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        this.activity?.setTitle("Розклад")
         val binding: StartFramentBinding = DataBindingUtil.inflate(inflater, R.layout.start_frament, container, false)
         val application = requireNotNull(this.activity).application
         val dataSource = ScheduleDatabase.getInstance(application).scheduleDatabaseDao
