@@ -1,0 +1,201 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_back"
+    android:padding="@dimen/widget_margin"
+    android:theme="@style/ThemeOverlay.KItApp.AppWidgetContainer">
+
+  <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="4dp">
+
+    <TextView
+        android:id="@+id/name_of_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="День тижня"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp" />
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+
+      android:layout_alignParentStart="true"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:layout_marginStart="20dp"
+      android:layout_marginLeft="20dp">
+
+
+    <TextView
+        android:id="@+id/time1"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"
+        android:text="11.10 - 12.30"
+        android:textColor="@color/secondaryLightColor"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/first_lesson"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/fourth_lesson"
+        android:layout_alignLeft="@+id/fourth_lesson"
+        android:layout_alignBottom="@+id/time1"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="-3dp"
+        android:text="Урок"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/time2"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"
+        android:text="12.50 - 14.10"
+        android:textColor="@color/secondaryLightColor"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/second_lesson"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/third_lesson"
+        android:layout_alignLeft="@+id/third_lesson"
+        android:layout_alignBottom="@+id/time2"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="-3dp"
+        android:text="Урок"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/time3"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"
+        android:text="14.25 - 15.45"
+        android:textColor="@color/secondaryLightColor"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/third_lesson"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/fourth_lesson"
+        android:layout_alignLeft="@+id/fourth_lesson"
+        android:layout_alignBottom="@+id/time3"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="-3dp"
+        android:text="Урок"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/time4"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"
+        android:text="16.00 - 17.20"
+        android:textColor="@color/secondaryLightColor"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/fourth_lesson"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/time4"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginBottom="-3dp"
+        android:layout_toEndOf="@+id/time4"
+        android:layout_toRightOf="@+id/time4"
+        android:text="Урок"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/time5"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time4"
+        android:layout_marginTop="5dp"
+        android:text="17.35 - 18.55"
+        android:textColor="@color/secondaryLightColor"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/fifth_lesson"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/fourth_lesson"
+        android:layout_alignLeft="@+id/fourth_lesson"
+        android:layout_alignBottom="@+id/time5"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="-3dp"
+        android:text="Урок"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="20sp" />
+  </RelativeLayout>
+
+
+
+
+
+
+
+
+        <!--    <androidx.cardview.widget.CardView-->
+        <!--        android:id="@+id/card_view"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_gravity="center"-->
+        <!--        app:cardCornerRadius="10dp">-->
+
+
+        <!--    </androidx.cardview.widget.CardView>-->
+
+
+</RelativeLayout>

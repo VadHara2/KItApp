@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
 
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
+        app:cardBackgroundColor="@color/primaryLightColor"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:text="17.35 - 18.55"
-                android:textColor="@color/primaryLightColor"
+                android:textColor="@color/secondaryLightColor"
                 app:layout_constraintBottom_toBottomOf="@+id/seventh_lesson"
                 app:layout_constraintStart_toStartOf="@+id/time6"
                 app:layout_constraintTop_toBottomOf="@+id/time6" />
@@ -52,7 +53,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="6dp"
                 android:text="16.00 - 17.20"
-                android:textColor="@color/primaryLightColor"
+                android:textColor="@color/secondaryLightColor"
                 app:layout_constraintBottom_toBottomOf="@+id/sixth_lesson"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time5" />
@@ -66,7 +67,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="6dp"
                 android:text="14.25 - 15.45"
-                android:textColor="@color/primaryLightColor"
+                android:textColor="@color/secondaryLightColor"
                 app:layout_constraintBottom_toBottomOf="@+id/fifth_lesson"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time4" />
@@ -80,7 +81,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="6dp"
                 android:text="12.50 - 14.10"
-                android:textColor="@color/primaryLightColor"
+                android:textColor="@color/secondaryLightColor"
                 app:layout_constraintBottom_toBottomOf="@+id/fourth_lesson"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time3" />
@@ -94,7 +95,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="6dp"
                 android:text="11.10 - 12.30"
-                android:textColor="@color/primaryLightColor"
+                android:textColor="@color/secondaryLightColor"
                 app:layout_constraintBottom_toBottomOf="@+id/third_lesson"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time2" />
@@ -108,7 +109,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="6dp"
                 android:text="9.35 - 10.55"
-                android:textColor="@color/primaryLightColor"
+                android:textColor="@color/secondaryLightColor"
                 app:layout_constraintBottom_toBottomOf="@+id/second_lesson"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time1" />
@@ -120,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="8:00 - 9.20"
-                android:textColor="@color/primaryLightColor"
+                android:textColor="@color/secondaryLightColor"
                 app:layout_constraintBottom_toBottomOf="@+id/first_lesson"
                 app:layout_constraintStart_toStartOf="@+id/time2"
                 app:layout_constraintTop_toBottomOf="@+id/name_of_day" />
@@ -133,7 +134,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
                 android:text="День тижня"
-                android:textColor="@color/primaryColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -147,7 +148,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="1dp"
                 android:text="TextView"
-                android:textColor="@color/primaryDarkColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/second_lesson"
                 app:layout_constraintStart_toEndOf="@+id/time5" />
@@ -161,7 +162,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="1dp"
                 android:text="TextView"
-                android:textColor="@color/primaryDarkColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/third_lesson"
                 app:layout_constraintStart_toEndOf="@+id/time5" />
@@ -175,7 +176,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="1dp"
                 android:text="TextView"
-                android:textColor="@color/primaryDarkColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/fourth_lesson"
                 app:layout_constraintStart_toEndOf="@+id/time5" />
@@ -189,7 +190,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="1dp"
                 android:text="TextView"
-                android:textColor="@color/primaryDarkColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/fifth_lesson"
                 app:layout_constraintStart_toEndOf="@+id/time5" />
@@ -201,7 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="TextView"
-                android:textColor="@color/primaryDarkColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/sixth_lesson"
                 app:layout_constraintStart_toStartOf="@+id/fourth_lesson" />
@@ -215,7 +216,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="1dp"
                 android:text="TextView"
-                android:textColor="@color/primaryDarkColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/seventh_lesson"
                 app:layout_constraintStart_toEndOf="@+id/time5" />
@@ -229,7 +230,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="1dp"
                 android:text="TextView"
-                android:textColor="@color/primaryDarkColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/time5"
                 app:layout_constraintTop_toBottomOf="@+id/sixth_lesson" />

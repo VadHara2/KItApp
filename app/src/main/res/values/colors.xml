@@ -2,22 +2,18 @@
 
 <!--?xml version="1.0" encoding="UTF-8"?-->
 
-<resources>
-
-    <color name="primaryColor">#3949ab</color>
-
-    <color name="primaryLightColor">#6f74dd</color>
-
-    <color name="primaryDarkColor">#00227b</color>
-
-    <color name="secondaryColor">#a7ffeb</color>
-
-    <color name="secondaryLightColor">#dbffff</color>
-
-    <color name="secondaryDarkColor">#75ccb9</color>
-
-    <color name="primaryTextColor">#ffffff</color>
-
-    <color name="secondaryTextColor">#000000</color>
+    <resources>
+    <color name="primaryColor">#fafafa</color>
+    <color name="primaryLightColor">#ffffff</color>
+    <color name="primaryDarkColor">#c7c7c7</color>
+    <color name="secondaryColor">#212121</color>
+    <color name="secondaryLightColor">#484848</color>
+    <color name="secondaryDarkColor">#000000</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#ffffff</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
 
 </resources>

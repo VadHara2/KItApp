@@ -21,8 +21,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tabIndicatorColor="@color/secondaryDarkColor"
-            app:tabSelectedTextColor="@color/secondaryLightColor"
-            app:tabTextColor="@color/primaryTextColor">
+            app:tabSelectedTextColor="@color/secondaryColor"
+            app:tabTextColor="@color/secondaryLightColor">
 
         </com.google.android.material.tabs.TabLayout>
     </com.google.android.material.appbar.AppBarLayout>
