@@ -4,6 +4,7 @@ import android.app.Application
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.content.Intent
 import android.widget.RemoteViews
 import androidx.lifecycle.ViewModelProvider
 import com.example.kitapp.R
@@ -31,6 +32,13 @@ class ScheduleWidget : AppWidgetProvider() {
         // There may be multiple widgets active, so update all of them
         for (appWidgetId in appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId)
+        }
+    }
+
+    override fun onReceive(context: Context?, intent: Intent?) {
+        super.onReceive(context, intent)
+        if (Intent.ACTION_DATE_CHANGED.equals(intent!!.getAction())) {
+
         }
     }
 
@@ -74,6 +82,90 @@ internal fun updateAppWidget(
     // Construct the RemoteViews object
     val views = RemoteViews(context.packageName, R.layout.schedule_widget)
     views.setTextViewText(R.id.name_of_day, dayOfWeek + " / " + chth)
+
+    when(chth){
+        "Чисельник" -> {
+            if (dayOfWeek == "Понеділок") {
+                views.setTextViewText(R.id.first_lessonw, "ТІМС 2309 лек.")
+                views.setTextViewText(R.id.second_lesson, "ТІМС 2309 пр.")
+                views.setTextViewText(R.id.third_lesson, "Англійська 2208 пр.")
+                views.setTextViewText(R.id.fourth_lesson, "-")
+                views.setTextViewText(R.id.fifth_lesson, "-")
+            } else if (dayOfWeek == "Вівторок") {
+                views.setTextViewText(R.id.first_lessonw, "-")
+                views.setTextViewText(R.id.second_lesson, "Алгоритми 2209 пр.")
+                views.setTextViewText(R.id.third_lesson, "Програмування 2209 пр.")
+                views.setTextViewText(R.id.fourth_lesson, "Програмування 2113 лек.")
+                views.setTextViewText(R.id.fifth_lesson, "-")
+            } else if (dayOfWeek == "Середа") {
+                views.setTextViewText(R.id.first_lessonw, "-")
+                views.setTextViewText(R.id.second_lesson, "-")
+                views.setTextViewText(R.id.third_lesson, "Електорадіо. 2309 лек.")
+                views.setTextViewText(R.id.fourth_lesson, "Електорадіо. 2309 лек.")
+                views.setTextViewText(R.id.fifth_lesson, "Фізкультура")
+            } else if (dayOfWeek == "Четвер") {
+                views.setTextViewText(R.id.first_lessonw, "-")
+                views.setTextViewText(R.id.second_lesson, "-")
+                views.setTextViewText(R.id.third_lesson, "Мат. Аналіз 2308 лек.")
+                views.setTextViewText(R.id.fourth_lesson, "ОБД 2112 лек.")
+                views.setTextViewText(R.id.fifth_lesson, "-")
+            } else if (dayOfWeek == "П'ятниця") {
+                views.setTextViewText(R.id.first_lessonw, "ТІМС 2309 лек.")
+                views.setTextViewText(R.id.second_lesson, "ТІМС 2309 пр.")
+                views.setTextViewText(R.id.third_lesson, "Англійська 2208 пр.")
+                views.setTextViewText(R.id.fourth_lesson, "-")
+                views.setTextViewText(R.id.fifth_lesson, "-")
+            } else if (dayOfWeek == "Субота") {
+                views.setTextViewText(R.id.first_lessonw, "-")
+                views.setTextViewText(R.id.second_lesson, "Алгоритми 2209 пр.")
+                views.setTextViewText(R.id.third_lesson, "Програмування 2209 пр.")
+                views.setTextViewText(R.id.fourth_lesson, "Програмування 2113 лек.")
+                views.setTextViewText(R.id.fifth_lesson, "-")
+            }
+        }
+        "Знаменник" ->{
+            if (dayOfWeek == "Понеділок") {
+                views.setTextViewText(R.id.first_lessonw, "ТІМС 2309 лек.")
+                views.setTextViewText(R.id.second_lesson, "Мат. Аналіз 2310 пр.")
+                views.setTextViewText(R.id.third_lesson, "Англійська 2208 пр.")
+                views.setTextViewText(R.id.fourth_lesson, "-")
+                views.setTextViewText(R.id.fifth_lesson, "-")
+            } else if (dayOfWeek == "Вівторок") {
+                views.setTextViewText(R.id.first_lessonw, "-")
+                views.setTextViewText(R.id.second_lesson, "Алгоритми 2209 пр.")
+                views.setTextViewText(R.id.third_lesson, "ОБД 2113 пр.")
+                views.setTextViewText(R.id.fourth_lesson, "Системне ПЗ 2113 лек.")
+                views.setTextViewText(R.id.fifth_lesson, "Системне ПЗ 2113 пр.")
+            } else if (dayOfWeek == "Середа") {
+                views.setTextViewText(R.id.first_lessonw, "-")
+                views.setTextViewText(R.id.second_lesson, "-")
+                views.setTextViewText(R.id.third_lesson, "Електорадіо. 2309 лек.")
+                views.setTextViewText(R.id.fourth_lesson, "Електорадіо. 2311 пр.")
+                views.setTextViewText(R.id.fifth_lesson, "Фізкультура")
+            } else if (dayOfWeek == "Четвер") {
+                views.setTextViewText(R.id.first_lessonw, "-")
+                views.setTextViewText(R.id.second_lesson, "-")
+                views.setTextViewText(R.id.third_lesson, "Мат. Аналіз 2308 лек.")
+                views.setTextViewText(R.id.fourth_lesson, "Алгоритми 2112 лек.")
+                views.setTextViewText(R.id.fifth_lesson, "-")
+            } else if (dayOfWeek == "П'ятниця") {
+                views.setTextViewText(R.id.first_lessonw, "-")
+                views.setTextViewText(R.id.second_lesson, "-")
+                views.setTextViewText(R.id.third_lesson, "Електорадіо. 2309 лек.")
+                views.setTextViewText(R.id.fourth_lesson, "Електорадіо. 2311 пр.")
+                views.setTextViewText(R.id.fifth_lesson, "Фізкультура")
+            } else if (dayOfWeek == "Субота") {
+                views.setTextViewText(R.id.first_lessonw, "-")
+                views.setTextViewText(R.id.second_lesson, "-")
+                views.setTextViewText(R.id.third_lesson, "Мат. Аналіз 2308 лек.")
+                views.setTextViewText(R.id.fourth_lesson, "Алгоритми 2112 лек.")
+                views.setTextViewText(R.id.fifth_lesson, "-")
+            }
+        }
+    }
+
+
+
     if (dayOfWeek == "Неділя"){
         views.setTextViewText(R.id.name_of_day, dayOfWeek + " / Вихідний")
         views.setTextViewText(R.id.first_lessonw,"-")
@@ -83,13 +175,6 @@ internal fun updateAppWidget(
         views.setTextViewText(R.id.fifth_lesson,"-")
     }
 
-    if (dayOfWeek == "Понеділок" && chth == "Чисельник"){
-        views.setTextViewText(R.id.first_lessonw,"ТІМС 2309 лек.")
-        views.setTextViewText(R.id.second_lesson,"ТІМС 2309 пр.")
-        views.setTextViewText(R.id.third_lesson,"Англійська 2208 пр.")
-        views.setTextViewText(R.id.fourth_lesson,"-")
-        views.setTextViewText(R.id.fifth_lesson,"-")
-    }
 
     // Instruct the widget manager to update the widget
     appWidgetManager.updateAppWidget(appWidgetId, views)

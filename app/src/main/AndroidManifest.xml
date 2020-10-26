@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <receiver android:name=".widget.ScheduleWidget">
             <intent-filter>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
