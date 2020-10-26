@@ -8,7 +8,7 @@
         <item name="android:fontFamily">@font/el_messiri_bold</item>
         <item name="fontFamily">@font/el_messiri_bold</item>
     </style>
-
+    
     <style name="BoldText" parent="AppTheme">
         <item name="android:fontFamily">@font/el_messiri</item>
         <item name="fontFamily">@font/el_messiri</item>
