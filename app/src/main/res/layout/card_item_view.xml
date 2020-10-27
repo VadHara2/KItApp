@@ -28,6 +28,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
+            android:id="@+id/in_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="8dp">
@@ -98,32 +99,6 @@
                 android:textColor="@color/secondaryLightColor"
                 app:layout_constraintBottom_toBottomOf="@+id/third_lesson"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/time2" />
-
-            <TextView
-                android:id="@+id/time2"
-                style="@style/BoldText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="6dp"
-                android:text="9.35 - 10.55"
-                android:textColor="@color/secondaryLightColor"
-                app:layout_constraintBottom_toBottomOf="@+id/second_lesson"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/time1" />
-
-            <TextView
-                android:id="@+id/time1"
-                style="@style/BoldText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="8:00 - 9.20"
-                android:textColor="@color/secondaryLightColor"
-                app:layout_constraintBottom_toBottomOf="@+id/first_lesson"
-                app:layout_constraintStart_toStartOf="@+id/time2"
                 app:layout_constraintTop_toBottomOf="@+id/name_of_day" />
 
             <TextView
@@ -138,34 +113,6 @@
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/first_lesson"
-                style="@style/BoldText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="1dp"
-                android:text="TextView"
-                android:textColor="@color/primaryTextColor"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/second_lesson"
-                app:layout_constraintStart_toEndOf="@+id/time5" />
-
-            <TextView
-                android:id="@+id/second_lesson"
-                style="@style/BoldText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="1dp"
-                android:text="TextView"
-                android:textColor="@color/primaryTextColor"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/third_lesson"
-                app:layout_constraintStart_toEndOf="@+id/time5" />
 
             <TextView
                 android:id="@+id/third_lesson"

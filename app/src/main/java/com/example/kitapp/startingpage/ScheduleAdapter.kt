@@ -1,34 +1,26 @@
 package com.example.kitapp.startingpage
 
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kitapp.R
 import com.example.kitapp.database.ScheduleItem
+import kotlinx.android.synthetic.main.card_item_view.*
+import kotlinx.android.synthetic.main.card_item_view.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ScheduleAdapter: RecyclerView.Adapter<ScheduleAdapter.ViewHolder>(){
+class ScheduleAdapter(): RecyclerView.Adapter<ScheduleAdapter.ViewHolder>(){
 
     var data= listOf<ScheduleItem>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    var up = listOf<ScheduleItem>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    var down = listOf<ScheduleItem>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -44,8 +36,8 @@ class ScheduleAdapter: RecyclerView.Adapter<ScheduleAdapter.ViewHolder>(){
         val item = data[position]
 
         holder.nameOfDay.text = item.nameDay
-        holder.firstLesson.text = item.firstLesson
-        holder.secondLesson.text = item.secondLesson
+//        holder.firstLesson.text = item.firstLesson
+//        holder.secondLesson.text = item.secondLesson
         holder.thirdLesson.text = item.thirdLesson
         holder.fourthLesson.text = item.fourthLesson
         holder.fifthLesson.text = item.fifthLesson
@@ -57,20 +49,10 @@ class ScheduleAdapter: RecyclerView.Adapter<ScheduleAdapter.ViewHolder>(){
         return data.size
     }
 
-    fun filter(){
-        for (day in data){
-            if (day.whichDay){
-                up.plus(day)
-            } else{
-                down.plus(day)
-            }
-        }
-    }
-
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val nameOfDay: TextView = itemView.findViewById(R.id.name_of_day)
-        val firstLesson: TextView = itemView.findViewById(R.id.first_lesson)
-        val secondLesson: TextView = itemView.findViewById(R.id.second_lesson)
+//        val firstLesson: TextView = itemView.findViewById(R.id.first_lesson)
+//        val secondLesson: TextView = itemView.findViewById(R.id.second_lesson)
         val thirdLesson: TextView = itemView.findViewById(R.id.third_lesson)
         val fourthLesson: TextView = itemView.findViewById(R.id.fourth_lesson)
         val fifthLesson: TextView = itemView.findViewById(R.id.fifth_lesson)

@@ -2,6 +2,7 @@ package com.example.kitapp.startingpage
 
 import android.app.Application
 import android.content.Intent.getIntent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,6 +20,7 @@ import com.example.kitapp.database.ScheduleItem
 import com.example.kitapp.databinding.StartFramentBinding
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.card_item_view.view.*
 
 
 class StartFragment(var chth:Boolean): Fragment() {
@@ -28,7 +30,6 @@ class StartFragment(var chth:Boolean): Fragment() {
     lateinit var viewModelFactory: StartViewModelFactory
     lateinit var startViewModel: StartViewModel
     lateinit var adapter: ScheduleAdapter
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.start_frament, container, false)
         application = requireNotNull(this.activity).application
@@ -44,8 +45,6 @@ class StartFragment(var chth:Boolean): Fragment() {
         }
 
 
-
-
         fun updateData(newData:List<ScheduleItem>){
             if (adapter.data != newData.filter { it.whichDay == chth }) {
                 adapter.data = newData.filter { it.whichDay == chth }
@@ -58,22 +57,6 @@ class StartFragment(var chth:Boolean): Fragment() {
             }
         })
 
-
-
-//        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-//
-//            override fun onTabSelected(tab: TabLayout.Tab?) {
-//                startViewModel.days.value?.let { updateData(it) }
-//            }
-//
-//            override fun onTabReselected(tab: TabLayout.Tab?) {
-//
-//            }
-//
-//            override fun onTabUnselected(tab: TabLayout.Tab?) {
-//                startViewModel.filter.value = !startViewModel.filter.value!!
-//            }
-//        })
 
         return binding.root
     }
