@@ -6,13 +6,13 @@
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/primaryLightColor</item>
-        <item name="android:fontFamily">@font/el_messiri_bold</item>
-        <item name="fontFamily">@font/el_messiri_bold</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+
+        <item name="fontFamily">sans-serif-condensed-medium</item>
     </style>
     
     <style name="BoldText" parent="AppTheme">
-        <item name="android:fontFamily">@font/el_messiri</item>
-        <item name="fontFamily">@font/el_messiri</item>
+
     </style>
 
 <!--    <style name="DarkCard" parent="AppThemeDark">-->
