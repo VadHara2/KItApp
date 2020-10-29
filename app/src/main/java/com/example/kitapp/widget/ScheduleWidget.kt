@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.widget.RemoteViews
 import androidx.lifecycle.ViewModelProvider
 import com.example.kitapp.R
@@ -57,15 +58,32 @@ internal fun updateAppWidget(
     appWidgetId: Int,
 ) {
 
-    var chth = "Ч/З"
-    when(Calendar.getInstance().get(Calendar.DAY_OF_WEEK_IN_MONTH)){
-        1 -> chth = "Знаменник"
-        2 -> chth = "Чисельник"
-        3 -> chth ="Знаменник"
-        4 -> chth = "Чисельник"
-        5 -> chth = "Знаменник"
-        else -> "ітвоітвло"
+    var chth = Calendar.getInstance().get(Calendar.MONTH).toString()
+    when(Calendar.getInstance().get(Calendar.MONTH)){
+        9 -> when(Calendar.getInstance().get(Calendar.WEEK_OF_MONTH)){
+            1 -> chth = "Чисельник"
+            2 -> chth = "Знаменник"
+            3 -> chth = "Чисельник"
+            4 -> chth = "Знаменник"
+            5 -> chth = "Чисельник"
+        }
+        10 -> when(Calendar.getInstance().get(Calendar.WEEK_OF_MONTH)){
+            1 -> chth = "Знаменник"
+            2 -> chth = "Чисельник"
+            3 -> chth = "Знаменник"
+            4 -> chth = "Чисельник"
+            5 -> chth = "Знаменник"
+        }
+        11-> when(Calendar.getInstance().get(Calendar.WEEK_OF_MONTH)){
+            1 -> chth = "Знаменник"
+            2 -> chth = "Чисельник"
+            3 -> chth = "Знаменник"
+            4 -> chth = "Чисельник"
+            5 -> chth = "Знаменник"
+        }
     }
+
+
 
     var dayOfWeek = "День тижня"
     when(Calendar.getInstance().get(Calendar.DAY_OF_WEEK)){
