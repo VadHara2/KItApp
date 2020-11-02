@@ -58,23 +58,26 @@ internal fun updateAppWidget(
     appWidgetId: Int,
 ) {
 
-    var chth = Calendar.getInstance().get(Calendar.MONTH).toString()
-    when(Calendar.getInstance().get(Calendar.MONTH)){
-        9 -> when(Calendar.getInstance().get(Calendar.WEEK_OF_MONTH)){
+    var chth : String = "_"
+    val wichDay = Calendar.getInstance(Locale.GERMANY).get(Calendar.WEEK_OF_MONTH)
+    val month = Calendar.getInstance().get(Calendar.MONTH)
+    when(month){
+        9 -> when(wichDay){
             1 -> chth = "Чисельник"
             2 -> chth = "Знаменник"
             3 -> chth = "Чисельник"
             4 -> chth = "Знаменник"
             5 -> chth = "Чисельник"
         }
-        10 -> when(Calendar.getInstance().get(Calendar.WEEK_OF_MONTH)){
+        10 -> when(wichDay){
+            0 -> chth = "Чисельник"
             1 -> chth = "Знаменник"
             2 -> chth = "Чисельник"
             3 -> chth = "Знаменник"
             4 -> chth = "Чисельник"
             5 -> chth = "Знаменник"
         }
-        11-> when(Calendar.getInstance().get(Calendar.WEEK_OF_MONTH)){
+        11-> when(wichDay){
             1 -> chth = "Знаменник"
             2 -> chth = "Чисельник"
             3 -> chth = "Знаменник"
